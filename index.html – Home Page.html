@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find the right IT certifications for your career path - IT certification roadmaps and guidance for students">
+  <title>EduPathway | IT Certification Guide</title>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #06b6d4;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --success: #10b981;
+      --accent: #7c3aed;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+    }
+    
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    
+    .logo-text {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .logo-text span {
+      color: var(--secondary);
+    }
+    
+    /* Navigation */
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+      padding: 5px 0;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--primary);
+      transition: width 0.3s;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    .nav-active {
+      color: var(--primary);
+    }
+    
+    .nav-active::after {
+      width: 100%;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--dark);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+      color: white;
+      padding: 70px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23FFFFFF" fill-opacity="0.05" width="50" height="50" x="0" y="0" /><rect fill="%23FFFFFF" fill-opacity="0.05" width="50" height="50" x="50" y="50" /></svg>');
+      background-size: 30px 30px;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--secondary);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    
+    .btn:hover {
+      background-color: #0891b2;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-primary {
+      background-color: var(--accent);
+    }
+    
+    .btn-primary:hover {
+      background-color: #6d28d9;
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid white;
+    }
+    
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+    
+    /* Search Section */
+    .search-section {
+      background-color: white;
+      padding: 40px 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .search-container {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .search-container h2 {
+      margin-bottom: 20px;
+      color: var(--dark);
+      font-size: 24px;
+    }
+    
+    .search-form {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .search-form select, .search-form input {
+      flex-grow: 1;
+      padding: 12px 15px;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      font-size: 16px;
+      outline: none;
+    }
+    
+    .search-form button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0 25px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-weight: 600;
+    }
+    
+    .search-form button:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    /* Certification Paths */
+    .cert-paths {
+      padding: 70px 0;
+      background-color: #f8fafc;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      color: var(--dark);
+    }
+    
+    .section-title p {
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .paths-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    
+    .path-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+    
+    .path-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .path-header {
+      height: 8px;
+    }
+    
+    .path-header-1 {
+      background-color: #3b82f6;
+    }
+    
+    .path-header-2 {
+      background-color: #10b981;
+    }
+    
+    .path-header-3 {
+      background-color: #f59e0b;
+    }
+    
+    .path-header-4 {
+      background-color: #ef4444;
+    }
+    
+    .path-content {
+      padding: 25px;
+    }
+    
+    .path-icon {
+      width: 60px;
+      height: 60px;
+      background-color: #f1f5f9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    
+    .path-content h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    
+    .path-content p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+    
+    .cert-list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    
+    .cert-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .cert-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .cert-list li::before {
+      content: '✓';
+      margin-right: 10px;
+      color: var(--success);
+      font-weight: bold;
+    }
+    
+    /* How It Works */
+    .how-it-works {
+      padding: 70px 0;
+      background-color: white;
+    }
+    
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
+    }
+    
+    .step {
+      text-align: center;
+      position: relative;
+    }
+    
+    .step-number {
+      background-color: var(--primary);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+      margin: 0 auto 20px;
+    }
+    
+    .step h3 {
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+    
+    .step p {
+      color: var(--gray);
+    }
+    
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: -20px;
+      width: 40px;
+      height: 2px;
+      background-color: #e2e8f0;
+    }
+    
+    /* Featured Certifications */
+    .featured-certs {
+      padding: 70px 0;
+      background-color: #f8fafc;
+    }
+    
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .cert-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .cert-logo {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f8fafc;
+      padding: 20px;
+    }
+    
+    .cert-logo div {
+      font-weight: bold;
+      font-size: 18px;
+      color: var(--primary);
+    }
+    
+    .cert-details {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .cert-tag {
+      display: inline-block;
+      background-color: #e0f2fe;
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .cert-details h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    
+    .cert-details p {
+      color: var(--gray);
+      margin-bottom: 15px;
+      font-size: 14px;
+      flex-grow: 1;
+    }
+    
+    .cert-meta {
+      display: flex;
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 15px;
+    }
+    
+    .cert-meta div {
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+    }
+    
+    .cert-meta div::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    
+    .cert-link {
+      text-align: center;
+      padding: 10px;
+      background-color: #f8fafc;
+    }
+    
+    .cert-link a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+    
+    .cert-link a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+      padding: 70px 0;
+      text-align: center;
+      color: white;
+    }
+    
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+    }
+    
+    /* Career Stats */
+    .career-stats {
+      padding: 70px 0;
+      background-color: white;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 8px;
+      background-color: #f8fafc;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .stat-number {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      color: var(--gray);
+      font-size: 16px;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      padding: 70px 0;
+      background-color: #f8fafc;
+    }
+    
+    .testimonials-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .testimonial {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-top: 40px;
+    }
+    
+    .testimonial-content {
+      position: relative;
+      padding: 20px 0;
+      font-style: italic;
+      color: var(--dark);
+    }
+    
+    .testimonial-content::before {
+      content: """;
+      font-size: 60px;
+      color: #e2e8f0;
+      position: absolute;
+      left: -15px;
+      top: -10px;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #e2e8f0;
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--primary);
+    }
+    
+    .author-info h4 {
+      margin-bottom: 5px;
+    }
+    
+    .author-info p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 60px 0 30px;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 30px;
+      height: 2px;
+      background-color: var(--secondary);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: #334155;
+      color: white;
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+    
+    .social-link:hover {
+      background-color: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #334155;
+      padding-top: 30px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    
+    /* Subscription Form */
+    .subscription-form {
+      display: flex;
+      margin-top: 15px;
+    }
+    
+    .subscription-form input {
+      flex-grow: 1;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+    
+    .subscription-form button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0 15px;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .subscription-form button:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .hero p {
+        font-size: 18px;
+      }
+      
+      .steps {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 40px auto 0;
+      }
+      
+      .step:not(:last-child)::after {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        position: relative;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        display: none;
+      }
+      
+      nav.active {
+        display: flex;
+      }
+      
+      .hero {
+        padding: 60px 0;
+      }
+      
+      .btn-group {
+        flex-direction: column;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+      
+      .search-form {
+        flex-direction: column;
+      }
+      
+      .cert-paths, .how-it-works, .featured-certs, .career-stats, .testimonials, .cta {
+        padding: 50px 0;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+      
+      .section-title h2 {
+        font-size: 26px;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 30px auto 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-text">Edu<span>Pathway</span></div>
+      </a>
+      <button class="mobile-menu-btn">☰</button>
+      <nav>
+        <a href="index.html" class="nav-active">Home</a>
+        <a href="career-paths.html">Career Paths</a>
+        <a href="certifications.html">IT Certifications</a>
+        <a href="comparison.html">Compare</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Find the Right IT Certifications <br>for Your Career Journey</h1>
+      <p>Navigate the world of IT certifications with clarity. Get personalized roadmaps based on your career goals and current skills.</p>
+      <div class="btn-group">
+        <a href="career-paths.html" class="btn btn-primary">Explore Career Paths</a>
+        <a href="quiz.html" class="btn">Take the Certification Quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="search-section">
+    <div class="container search-container">
+      <h2>What IT career are you pursuing?</h2>
+      <form class="search-form">
+        <select>
+          <option value="">Select your career goal</option>
+          <option value="network">Network Engineer</option>
+          <option value="security">Cybersecurity Specialist</option>
+          <option value="cloud">Cloud Architect</option>
+          <option value="dev">Software Developer</option>
+          <option value="data">Data Scientist</option>
+          <option value="devops">DevOps Engineer</option>
+        </select>
+        <button type="submit">Find My Path</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="cert-paths">
+    <div class="container">
+      <div class="section-title">
+        <h2>Popular IT Career Paths</h2>
+        <p>Discover the most in-demand IT career tracks and their certification roadmaps.</p>
+      </div>
+      
+      <div class="paths-grid">
+        <div class="path-card">
+          <div class="path-header path-header-1"></div>
+          <div class="path-content">
+            <div class="path-icon">💻</div>
+            <h3>Cybersecurity</h3>
+            <p>Protect systems and data from security threats and vulnerabilities.</p>
+            <ul class="cert-list">
+              <li>CompTIA Security+</li>
+              <li>Certified Ethical Hacker (CEH)</li>
+              <li>CISSP</li>
+              <li>CISM</li>
+            </ul>
+            <a href="paths/cybersecurity.html" class="btn">View Full Path</a>
+          </div>
+        </div>
+        
+        <div class="path-card">
+          <div class="path-header path-header-2"></div>
+          <div class="path-content">
+            <div class="path-icon">☁️</div>
+            <h3>Cloud Computing</h3>
+            <p>Design, deploy and manage applications in cloud environments.</p>
+            <ul class="cert-list">
+              <li>AWS Certified Solutions Architect</li>
+              <li>Microsoft Azure Administrator</li>
+              <li>Google Cloud Professional</li>
+              <li>CompTIA Cloud+</li>
+            </ul>
+            <a href="paths/cloud.html" class="btn">View Full Path</a>
+          </div>
+        </div>
+        
+        <div class="path-card">
+          <div class="path-header path-header-3"></div>
+          <div class="path-content">
+            <div class="path-icon">🔄</div>
+            <h3>DevOps</h3>
+            <p>Bridge development and operations to deploy software faster and more reliably.</p>
+            <ul class="cert-list">
+              <li>Docker Certified Associate</li>
+              <li>Kubernetes Administrator (CKA)</li>
+              <li>AWS DevOps Engineer</li>
+              <li>Azure DevOps Expert</li>
+            </ul>
+            <a href="paths/devops.html" class="btn">View Full Path</a>
+          </div>
+        </div>
+        
+        <div class="path-card">
+          <div class="path-header path-header-4"></div>
+          <div class="path-content">
+            <div class="path-icon">📊</div>
+            <h3>Data Science</h3>
+            <p>Extract insights from data using statistical analysis and machine learning.</p>
+            <ul class="cert-list">
+              <li>Microsoft Data Scientist</li>
+              <li>IBM Data Science Professional</li>
+              <li>Google Data Analytics</li>
+              <li>Tensorflow Developer Certificate</li>
+            </ul>
+            <a href="paths/data-science.html" class="btn">View Full Path</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-title">
+        <h2>How EduPathway Works</h2>
+        <p>We guide you through the certification process in three simple steps.</p>
+      </div>
+      
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Define Your Goal</h3>
+          <p>Tell us about your career goals, current skills, and experience level in IT.</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Get Your Roadmap</h3>
+          <p>Receive a personalized certification path with recommended order and resources.</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Follow Your Path</h3>
+          <p>Track progress, access study resources, and update your journey as you grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-certs">
+    <div class="container">
+      <div class="section-title">
+        <h2>Top IT Certifications in 2025</h2>
+        <p>The most sought-after credentials by employers right now.</p>
+      </div>
+      
+      <div class="certs-grid">
+        <div class="cert-card">
+          <div class="cert-logo">
+            <div>AWS</div>
+          </div>
+          <div class="cert-details">
+            <span class="cert-tag">Cloud</span>
+            <h3>AWS Certified Solutions Architect</h3>
+            <p>Design available, cost-efficient, fault-tolerant, and scalable distributed systems on AWS.</p>
+            <div class="cert-meta">
+              <div>Intermediate</div>
+              <div>6 Months Prep</div>
+            </div>
+          </div>
+          <div class="cert-link">
+            <a href="certifications/aws-solutions-architect.html">View Details →</a>
+          </div>
+        </div>
+        
+        <div class="cert-card">
+          <div class="cert-logo">
+            <div>CISSP</div>
+          </div>
+          <div class="cert-details">
+            <span class="cert-tag">Security</span>
+            <h3>Certified Information Systems Security Professional</h3>
+            <p>Prove your knowledge and expertise in designing, implementing and managing cybersecurity programs.</p>
+            <div class="cert-meta">
+              <div>
